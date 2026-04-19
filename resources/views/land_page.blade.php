@@ -9,281 +9,363 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-       
-   body {
-    background: url('/images/road-220058_1280.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-        .navbar-custom {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(8px);
+        * {
+            box-sizing: border-box;
         }
 
-        .navbar-brand {
-            font-size: 1.6rem;
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            color: #fff;
+            background:
+                linear-gradient(rgba(9, 18, 35, 0.35), rgba(9, 18, 35, 0.35)),
+                url('/images/road-220058_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .top-nav {
+            width: 90%;
+            margin: 18px auto 0;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: rgba(19, 28, 46, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+        }
+
+        .brand-logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.15rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .hero-section {
-            padding: 90px 0 50px;
+        .brand-logo i {
+            font-size: 1.35rem;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.88);
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 0.95rem;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .hero-wrapper {
+            min-height: calc(100vh - 110px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px 80px;
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.78);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.55);
-            border-radius: 32px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
+    width: 100%;
+    max-width: 760px;
+    background: rgba(255,255,255,0.90);
+    border-radius: 24px;
+    padding: 34px 34px 28px;
+    color: #111827;
+    box-shadow: 0 22px 40px rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.65);
+    position: relative;
+}
+
+        .mini-label {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #3f3f46;
+            margin-bottom: 8px;
         }
 
-        
-          .hero-card {
-    max-width: 800px; /* كان كبير */
-    margin: auto;
-    padding: 40px 30px; /* صغرناه */
-    background: rgba(255,255,255,0.85);
-    border-radius: 20px;
-}
-        
+        .mini-label i {
+            font-size: 0.78rem;
+            margin-right: 5px;
+        }
 
         .hero-title {
-            font-size: 3.2rem;
+            text-align: center;
+            font-size: 3rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.18;
             color: #0f172a;
             margin-bottom: 18px;
         }
 
         .hero-text {
-            max-width: 760px;
-            margin: 0 auto;
-            color: #64748b;
-            font-size: 1.12rem;
+            text-align: center;
+            color: #374151;
+            font-size: 1.05rem;
             line-height: 1.9;
+            max-width: 640px;
+            margin: 0 auto 28px;
+        }
+
+        .brand-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 14px;
         }
 
         .brand-btn {
-            min-width: 155px;
-            padding: 14px 20px;
-            border-radius: 18px;
-            font-weight: 700;
-            font-size: 1rem;
-            border: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
+            min-width: 138px;
+            padding: 12px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.38);
+            box-shadow:
+                inset 0 2px 4px rgba(255,255,255,0.18),
+                0 8px 16px rgba(0,0,0,0.18);
+            transition: all 0.22s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .brand-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 28px rgba(15, 23, 42, 0.12);
+            transform: translateY(-2px);
+            color: #fff;
         }
 
         .toyota-btn {
-            background: #ef4444;
-            color: white;
+            background: linear-gradient(180deg, #b5222b, #8f1019);
         }
 
         .kia-btn {
-            background: #111827;
-            color: white;
+            background: linear-gradient(180deg, #17855c, #116646);
         }
 
         .hyundai-btn {
-            background: #2563eb;
-            color: white;
+            background: linear-gradient(180deg, #35598d, #253d63);
         }
 
         .mazda-btn {
-            background: #facc15;
-            color: #111827;
+            background: linear-gradient(180deg, #7c7f87, #5d6168);
+        }
+
+        .allcars-wrap {
+            text-align: center;
+            margin-top: 10px;
         }
 
         .allcars-btn {
-            background: #10b981;
-            color: white;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .section-text {
-            color: #64748b;
-            max-width: 650px;
-            margin: 12px auto 0;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.60);
-            border-radius: 26px;
-            padding: 32px 24px;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
-            height: 100%;
-            transition: 0.25s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 66px;
-            height: 66px;
-            margin: 0 auto 18px;
-            border-radius: 20px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #eff6ff;
-            color: #2563eb;
+            gap: 8px;
+            min-width: 175px;
+            padding: 13px 22px;
+            border-radius: 14px;
+            background: linear-gradient(180deg, #3ca89d, #287f77);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid rgba(255,255,255,0.40);
+            box-shadow:
+                inset 0 2px 4px rgba(255,255,255,0.18),
+                0 10px 18px rgba(0,0,0,0.18);
+            transition: 0.22s ease;
+        }
+
+        .allcars-btn:hover {
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        .corner-icon {
+            position: absolute;
+            color: #1f2937;
+            opacity: 0.88;
             font-size: 1.8rem;
         }
 
-        .feature-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 12px;
+        .corner-top-right {
+            top: 24px;
+            right: 24px;
         }
 
-        .feature-desc {
-            color: #64748b;
-            line-height: 1.8;
-            margin: 0;
+        .corner-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.6rem;
         }
 
-        .footer {
-            margin-top: 70px;
-            background: rgba(15, 23, 42, 0.97);
-            color: #cbd5e1;
-            text-align: center;
-            padding: 18px 0;
-            font-size: 15px;
+        .corner-bottom-right {
+            bottom: 20px;
+            right: 24px;
+            font-size: 1.8rem;
+        }
+
+        .footer-bar {
+            width: 90%;
+            margin: 0 auto 20px;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: rgba(19, 28, 46, 0.45);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+            color: #fff;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin-right: 14px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .copyright {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.92);
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-card {
+                max-width: 95%;
+                padding: 28px 20px 24px;
+            }
+
             .hero-title {
                 font-size: 2.2rem;
             }
 
-            .hero-card {
-                padding: 40px 24px;
+            .hero-text {
+                font-size: 0.98rem;
             }
 
-            .brand-btn {
+            .brand-btn,
+            .allcars-btn {
                 width: 100%;
+            }
+
+            .brand-row {
+                gap: 10px;
+            }
+
+            .corner-icon {
+                display: none;
+            }
+
+            .footer-bar {
+                text-align: center;
+            }
+
+            .footer-bar .d-flex {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="bi bi-car-front-fill me-2"></i>Car Store
+    <nav class="top-nav">
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="/" class="brand-logo">
+                <i class="bi bi-car-front-fill"></i>
+                <span>Car Store</span>
             </a>
+
+            <div class="nav-links">
+                <a href="/cars">Models</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#blog">Blog</a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-card text-center">
-                <div class="hero-badge">
-                    <i class="bi bi-stars"></i>
-                    Premium Car Collection
-                </div>
+    <section class="hero-wrapper">
+        <div class="hero-card">
+            <div class="corner-icon corner-top-right">
+                <i class="bi bi-speedometer2"></i>
+            </div>
 
-                <h1 class="hero-title">Find the right car for your next drive</h1>
+            <div class="mini-label">
+                <i class="bi bi-stars"></i>Premium Car Collection
+            </div>
 
-                <p class="hero-text">
-                    Explore a clean collection of modern cars from trusted brands.
-                    Compare models, browse by brand, and view cars in a simple and elegant interface.
-                </p>
+            <h1 class="hero-title">Find the right car for your next drive</h1>
 
-                <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-                    <a href="/brand/Toyota" class="btn brand-btn toyota-btn">
-                        <i class="bi bi-car-front me-2"></i>Toyota
-                    </a>
+            <p class="hero-text">
+                Explore a clean collection of modern cars from trusted brands.
+                Compare models, browse by brand, and view cars in a simple and elegant interface.
+            </p>
 
-                    <a href="/brand/Kia" class="btn brand-btn kia-btn">
-                        <i class="bi bi-lightning-charge-fill me-2"></i>Kia
-                    </a>
+            <div class="brand-row">
+                <a href="/brand/Toyota" class="brand-btn toyota-btn">
+                    <i class="bi bi-car-front"></i>Toyota
+                </a>
 
-                    <a href="/brand/Hyundai" class="btn brand-btn hyundai-btn">
-                        <i class="bi bi-speedometer2 me-2"></i>Hyundai
-                    </a>
+                <a href="/brand/Kia" class="brand-btn kia-btn">
+                    <i class="bi bi-lightning-charge-fill"></i>Kia
+                </a>
 
-                    <a href="/brand/Mazda" class="btn brand-btn mazda-btn">
-                        <i class="bi bi-fire me-2"></i>Mazda
-                    </a>
+                <a href="/brand/Hyundai" class="brand-btn hyundai-btn">
+                    <i class="bi bi-speedometer2"></i>Hyundai
+                </a>
 
-                    <a href="/cars" class="btn brand-btn allcars-btn">
-                        <i class="bi bi-grid-3x3-gap-fill me-2"></i>View All Cars
-                    </a>
-                </div>
+                <a href="/brand/Mazda" class="brand-btn mazda-btn">
+                    <i class="bi bi-fire"></i>Mazda
+                </a>
+            </div>
+
+            <div class="allcars-wrap">
+                <a href="/cars" class="allcars-btn">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>View All Cars
+                </a>
+            </div>
+
+            <div class="corner-icon corner-bottom-left">
+                <i class="bi bi-award"></i>
+            </div>
+
+            <div class="corner-icon corner-bottom-right">
+                <i class="bi bi-speedometer2"></i>
             </div>
         </div>
     </section>
 
-    <section class="pb-4">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Why choose our store?</h2>
-                <p class="section-text">
-                    We focused on keeping the design simple, modern, and clear for a better browsing experience.
-                </p>
+    <footer class="footer-bar" id="contact">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="social-links">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-                        <h3 class="feature-title">Trusted Selection</h3>
-                        <p class="feature-desc">
-                            Browse carefully presented car models with details that help users compare clearly.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-cash-stack"></i>
-                        </div>
-                        <h3 class="feature-title">Clear Prices</h3>
-                        <p class="feature-desc">
-                            Each car is shown with direct pricing and simple information for fast understanding.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-ui-checks-grid"></i>
-                        </div>
-                        <h3 class="feature-title">Smooth Browsing</h3>
-                        <p class="feature-desc">
-                            Move between brands easily and view all cars in a clean, user-friendly layout.
-                        </p>
-                    </div>
-                </div>
+            <div class="copyright">
+                © 2026 Car Store
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        Car Store © 2026
     </footer>
 
 </body>
